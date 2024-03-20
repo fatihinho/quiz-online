@@ -3,7 +3,6 @@ package com.fcinar.quizonline.controller;
 import com.fcinar.quizonline.db.entity.Question;
 import com.fcinar.quizonline.db.input.QuestionInput;
 import com.fcinar.quizonline.service.QuestionService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,13 +38,13 @@ public class QuestionController {
     }
 
     @PostMapping("/question/create")
-    public ResponseEntity<Question> create(@Valid @RequestBody QuestionInput input) {
+    public ResponseEntity<Question> create(@RequestBody QuestionInput input) {
         Question entity = service.create(input);
         return ResponseEntity.status(HttpStatus.CREATED).body(entity);
     }
 
     @PutMapping("/question/{id}/update")
-    public ResponseEntity<Question> updateById(@PathVariable("id") Long id, @Valid @RequestBody QuestionInput input) {
+    public ResponseEntity<Question> updateById(@PathVariable("id") Long id, @RequestBody QuestionInput input) {
         Question entity = service.updateById(id, input);
         if (entity != null) {
             return ResponseEntity.status(HttpStatus.OK).body(entity);

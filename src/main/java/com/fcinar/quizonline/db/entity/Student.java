@@ -5,16 +5,10 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "QUESTION")
-public class Question {
+@Table(name = "STUDENT")
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String question;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "quiz_id")
-    private Quiz quiz;
 }
