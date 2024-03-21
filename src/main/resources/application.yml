@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-cnub7jgcmk4c73e5da30-a.frankfurt-postgres.render.com/quizonline
-    username: quizonline_user
-    password: blEseCDtrN64Ki9QfPcFpfgsSDd0YZ7S
+    url: jdbc:postgresql://localhost:5432/quiz-online
+    username: postgres
+    password: root
   jpa:
     properties:
       hibernate:
