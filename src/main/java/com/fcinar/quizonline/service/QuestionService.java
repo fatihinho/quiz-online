@@ -51,5 +51,6 @@ public class QuestionService {
     public boolean deleteAll() {
         repository.deleteAll();
         return true;
+
     }
 }
