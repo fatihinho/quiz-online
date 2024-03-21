@@ -7,9 +7,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=quiz-online
+      - POSTGRES_USER=quizonline_user
+      - POSTGRES_PASSWORD=blEseCDtrN64Ki9QfPcFpfgsSDd0YZ7S
+      - POSTGRES_DB=quizonline
     restart: always
   app:
     container_name: quiz-online-app
@@ -19,9 +19,9 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://quiz-online-db:5432/quiz-online
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dpg-cnub7jgcmk4c73e5da30-a.frankfurt-postgres.render.com/quizonline
+      - SPRING_DATASOURCE_USERNAME=quizonline_user
+      - SPRING_DATASOURCE_PASSWORD=blEseCDtrN64Ki9QfPcFpfgsSDd0YZ7S
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     depends_on:
       - db
