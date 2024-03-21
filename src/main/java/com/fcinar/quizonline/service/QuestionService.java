@@ -47,4 +47,9 @@ public class QuestionService {
             return false;
         }
     }
+
+    public boolean deleteAll() {
+        repository.deleteAll();
+        return true;
+    }
 }

@@ -62,4 +62,14 @@ public class QuestionController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
+
+    @DeleteMapping("question/deleteAll")
+    public ResponseEntity<Boolean> deleteAll() {
+        boolean isDeleted = service.deleteAll();
+        if (isDeleted) {
+            return ResponseEntity.status(HttpStatus.OK).build();
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
 }
